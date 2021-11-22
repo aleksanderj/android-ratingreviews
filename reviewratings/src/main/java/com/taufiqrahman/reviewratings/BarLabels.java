@@ -54,4 +54,11 @@ public class BarLabels {
             "3 stars ",
             "2 stars ",
             "1 star  "};
+
+    public static final String Snull[] = new String[]{
+            "",
+            "",
+            "",
+            "",
+            ""};
 }

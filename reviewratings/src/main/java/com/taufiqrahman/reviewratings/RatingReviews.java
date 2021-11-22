@@ -140,7 +140,6 @@ public class RatingReviews extends FrameLayout {
 
     /**
      * createRatingBars creates the ratingreviews with values given by user.
-//     * @param numOfBars   number of bars required
      * @param maxBarValue max value for the Bars.
      * @param labels      format and styling of the label texts.
      * @param colorsArr   expects an array of the color-int (parseColor).
@@ -150,7 +149,6 @@ public class RatingReviews extends FrameLayout {
     public void createRatingBars(int maxBarValue, String labels[], int colorsArr[], int raters[]) {
 
         setMaxBarValue(maxBarValue);
-        //setmNumOfBars(numOfBars);
 
         for (int i = 0; i < mNumOfBars; i++) {
             Bar bar = new Bar();

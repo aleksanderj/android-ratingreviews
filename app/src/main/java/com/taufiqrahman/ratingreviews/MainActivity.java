@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 new Random().nextInt(100)
         };
 
-        ratingReviews.setmNumOfBars(1);
+        ratingReviews.setmNumOfBars(5); // 5 is the default value
 
-        ratingReviews.createRatingBars(100, BarLabels.STYPE1, colors, raters);
+        ratingReviews.createRatingBars(100, BarLabels.Snull, colors, raters);
+        //BarLabels.Snull just a more straight forward way of removing labels
     }
 
     public void callExample2Activity(View view) {
