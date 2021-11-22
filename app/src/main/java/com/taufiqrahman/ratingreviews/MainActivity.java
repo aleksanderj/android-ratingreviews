@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RatingReviews ratingReviews = (RatingReviews) findViewById(R.id.rating_reviews);
+        ratingReviews.setMaxBarValue(100);
 
         int colors[] = new int[]{
                 Color.parseColor("#0e9d58"),
