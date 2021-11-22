@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 new Random().nextInt(100)
         };
 
+        ratingReviews.setmNumOfBars(1);
+
         ratingReviews.createRatingBars(100, BarLabels.STYPE1, colors, raters);
     }
 
