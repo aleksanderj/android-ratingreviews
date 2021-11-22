@@ -100,7 +100,7 @@ public class RatingReviews extends FrameLayout {
         isShowRaters = a.getBoolean(R.styleable.RatingReviews_show_raters, true);
         isShowAnimation = a.getBoolean(R.styleable.RatingReviews_animation, true);
 
-        this.mNumOfBars = 5;
+        this.mNumOfBars = 1; //TODO make it dynamic 
 
         a.recycle();
         initLayout();
@@ -132,17 +132,18 @@ public class RatingReviews extends FrameLayout {
 
     /**
      * createRatingBars creates the ratingreviews with values given by user.
-     *
+     * @param numOfBars
      * @param maxBarValue max value for the Bars.
      * @param labels      format and styling of the label texts.
      * @param colorsArr   expects an array of the color-int (parseColor).
      * @param raters      expects an array of the raters for each stars given.
      */
-    public void createRatingBars(int maxBarValue, String labels[], int colorsArr[], int raters[]) {
+
+    public void createRatingBars(int numOfBars,int maxBarValue, String labels[], int colorsArr[], int raters[]) {
 
         setMaxBarValue(maxBarValue);
 
-        for (int i = 0; i < mNumOfBars; i++) {
+        for (int i = 0; i < numOfBars; i++) {
             Bar bar = new Bar();
             bar.setRaters(raters[i]);
             bar.setColor(colorsArr[i]);
