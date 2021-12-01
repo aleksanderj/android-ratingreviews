@@ -52,8 +52,10 @@ public class RatingReviews extends FrameLayout {
     private int mBarColor;
     private int mBarMaxValue;
     private int mStyle;
-    private int mNumOfBars = 5;
     private boolean isRoundCorner;
+
+    private int mNumOfBars = 5;
+    private boolean isRtl = false;
 
     private boolean isBarAdded = false;
     private boolean isShowLabel = true;
@@ -131,11 +133,19 @@ public class RatingReviews extends FrameLayout {
 
     /**
      *
-     * @param numOfBars
+     * @param numOfBars sets the number of bars default value is 5
      */
     public void setmNumOfBars(int numOfBars){
         this.mNumOfBars = numOfBars;
 
+    }
+
+    /**
+    *
+    * @param isRtl sets the direction where the bars start
+     */
+    public void isRTL(boolean isRtl){
+        this.isRtl = isRtl;
     }
 
     /**
@@ -229,7 +239,7 @@ public class RatingReviews extends FrameLayout {
         }
 
         View view = LayoutInflater.from(mCtx).inflate(styleLayout, mLinearParentLayout, false);
-        draw(dimension, null, bar, view);
+        draw(dimension, null, bar, view , isRtl);
     }
 
     /**
@@ -240,7 +250,7 @@ public class RatingReviews extends FrameLayout {
      * @param bar        itself.
      * @param view       view.
      */
-    private void draw(int dimension, Bar initialBar, final Bar bar, final View view) {
+    private void draw(int dimension, Bar initialBar, final Bar bar, final View view , final boolean RTL) {
         final int bgColor = bar.getColor() != 0 ? bar.getColor() : mBarColor;
 
         view.post(new Runnable() {
@@ -268,8 +278,14 @@ public class RatingReviews extends FrameLayout {
                         view.findViewById(R.id.linear_bar).setBackgroundColor(bgColor);
                     }
                 }
+
+                if(RTL){
+                    view.findViewById(R.id.text_view_bar_label).setRotation(180);
+                    view.findViewById(R.id.text_view_raters).setRotation(180);
+                }
             }
         });
+
 
 
         int dimensionBar = dimension * bar.getRaters() / mBarMaxValue;

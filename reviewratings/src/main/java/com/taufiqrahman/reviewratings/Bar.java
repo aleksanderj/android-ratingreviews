@@ -28,19 +28,22 @@ public class Bar {
     private int color;
     private int startColor;
     private int endColor;
+    private boolean rtl;
 
     public Bar() {
     }
 
-    Bar(int raters, int color) {
+    Bar(int raters, int color,boolean isRtl) {
         this.raters = raters;
         this.color = color;
+        this.rtl = isRtl;
     }
 
-    Bar(int raters, int color, String starLabel) {
+    Bar(int raters, int color, String starLabel, boolean isRtl) {
         this.raters = raters;
         this.color = color;
         this.starLabel = starLabel;
+        this.rtl = isRtl;
     }
 
     public int getRaters() {
@@ -86,4 +89,6 @@ public class Bar {
     public void setStartColor(int startColor) {
         this.startColor = startColor;
     }
+
+    public boolean isRtl(){return rtl;}
 }

@@ -30,16 +30,17 @@ public class MainActivity extends AppCompatActivity {
                 Color.parseColor("#d36259")};
 
         int raters[] = new int[]{
-                new Random().nextInt(100),
-                new Random().nextInt(100),
-                new Random().nextInt(100),
-                new Random().nextInt(100),
+                50,
+                50,
+                20,
+                20,
                 new Random().nextInt(100)
         };
 
         ratingReviews.setmNumOfBars(5); // 5 is the default value
-
-        ratingReviews.createRatingBars(100, BarLabels.Snull, colors, raters);
+        ratingReviews.isRTL(true);
+        ratingReviews.setRotation(0);
+        ratingReviews.createRatingBars(100, BarLabels.STYPE1, colors, raters);
         //BarLabels.Snull just a more straight forward way of removing labels
     }
 

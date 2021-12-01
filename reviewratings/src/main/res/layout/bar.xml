@@ -22,6 +22,7 @@
         android:layout_gravity="end"
         android:paddingStart="2dp"
         android:paddingLeft="2dp"
+        android:rotation="0"
         android:textColor="#333333"
         android:typeface="monospace" />
 
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingStart="2dp"
+        android:rotation="0"
         android:paddingLeft="2dp"
         android:textColor="#333333"
         android:textSize="10sp" />

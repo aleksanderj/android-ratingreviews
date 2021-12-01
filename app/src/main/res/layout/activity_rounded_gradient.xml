@@ -7,27 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".RoundBarSampleActivity" >
 
-    <com.taufiqrahman.reviewratings.RatingReviews xmlns:bar="http://schemas.android.com/apk/res-auto"
+    <com.taufiqrahman.reviewratings.RatingReviews
         android:id="@+id/rating_reviews"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:rotation="180"
+        app:animation="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
-        bar:animation="true"
-        bar:max_value="100"
-        bar:show_label="true"
-        bar:show_raters="false"
-        bar:spaces="7dp"
-        bar:text_color="#333333"
-        bar:text_size="10sp"
-        bar:rounded="true"
-        bar:width="12dp" />
+        app:max_value="100"
+        app:rounded="true"
+        app:show_label="true"
+        app:show_raters="false"
+        app:spaces="7dp"
+        app:text_color="#333333"
+        app:text_size="10sp"
+        app:width="12dp" />
 
     <TextView
         android:id="@+id/textView"

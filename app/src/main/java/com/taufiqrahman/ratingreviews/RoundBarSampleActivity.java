@@ -18,7 +18,7 @@ public class RoundBarSampleActivity extends AppCompatActivity {
         RatingReviews ratingReviews = (RatingReviews) findViewById(R.id.rating_reviews);
 
         int raters[] = new int[]{
-                new Random().nextInt(100),
+                100,
                 new Random().nextInt(100),
                 new Random().nextInt(100),
                 new Random().nextInt(100),

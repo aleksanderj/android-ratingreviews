@@ -14,6 +14,7 @@
   limitations under the License.
 
   Created by Taufiq Rahman on 07/02/19.
+  Update by Abdulaziz Almadhi on 01/12/20.
  */
 
 package com.taufiqrahman.reviewratings;
