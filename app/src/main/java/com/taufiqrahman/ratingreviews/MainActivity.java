@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         };
 
         ratingReviews.setmNumOfBars(5); // 5 is the default value
-        ratingReviews.isRTL(true);
-        ratingReviews.setRotation(0);
-        ratingReviews.createRatingBars(100, BarLabels.STYPE1, colors, raters);
+        ratingReviews.RotateText180(true); // Text rotated 180 Degrees
+        ratingReviews.setRotation(180); // rotates the bar so its RTL
+        ratingReviews.createRatingBars(100, BarLabels.Snull, colors, raters);
         //BarLabels.Snull just a more straight forward way of removing labels
     }
 

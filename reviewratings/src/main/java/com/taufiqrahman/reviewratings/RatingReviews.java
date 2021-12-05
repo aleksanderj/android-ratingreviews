@@ -144,7 +144,7 @@ public class RatingReviews extends FrameLayout {
     *
     * @param isRtl sets the direction where the bars start
      */
-    public void isRTL(boolean isRtl){
+    public void RotateText180(boolean isRtl){
         this.isRtl = isRtl;
     }
 
