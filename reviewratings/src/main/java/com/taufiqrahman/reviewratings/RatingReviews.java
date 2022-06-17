@@ -22,6 +22,7 @@ import android.animation.LayoutTransition;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -49,6 +50,7 @@ public class RatingReviews extends FrameLayout {
     private int mBarTextColor;
     private int mBarDimension;
     private int mBarTextSize;
+    private int mBarTextStyle;
     private int mBarColor;
     private int mBarMaxValue;
     private int mStyle;
@@ -92,6 +94,7 @@ public class RatingReviews extends FrameLayout {
         mBarTextSize = (int) Utils.convertPixelsToDp(
                 a.getDimensionPixelSize(R.styleable.RatingReviews_text_size,
                         (int) Utils.convertDpToPixel(15, mCtx)), mCtx);
+        mBarTextStyle = a.getInt(R.styleable.RatingReviews_text_style, 0);
         mBarTextColor = a.getColor(R.styleable.RatingReviews_text_color, Utils.DEFAULT_BAR_TEXT_COLOR);
         mBarMaxValue = a.getInt(R.styleable.RatingReviews_max_value, 0);
         mBarSpaces = a.getDimensionPixelSize(R.styleable.RatingReviews_spaces,
@@ -191,6 +194,17 @@ public class RatingReviews extends FrameLayout {
         }
     }
 
+    public void createRatingBars(int bars, int maxBarValue, ArrayList<String> labels, ArrayList<Integer> colors, ArrayList<Integer> scores) {
+        setMaxBarValue(maxBarValue);
+
+        for (int i = 0; i < labels.size(); i++) {
+            Bar bar = new Bar();
+            bar.setRaters(scores.get(i));
+            bar.setColor(colors.get(i));
+            bar.setStarLabel(labels.get(i));
+            addBar(bar);
+        }
+    }
 
     /**
      * createRatingBars creates the ratingreviews with values given by user.
@@ -301,6 +315,20 @@ public class RatingReviews extends FrameLayout {
 
             textView.setTextSize(mBarTextSize);
             textView.setTextColor(mBarTextColor);
+
+            switch (mBarTextStyle) {
+                case 0:
+                    textView.setTypeface(Typeface.SANS_SERIF);
+                    break;
+
+                case 1:
+                    textView.setTypeface(Typeface.SERIF);
+                    break;
+
+                case 2:
+                    textView.setTypeface(Typeface.MONOSPACE);
+                    break;
+            }
         } else {
             view.findViewById(R.id.text_view_bar_label).setVisibility(GONE);
         }
